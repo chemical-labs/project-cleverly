@@ -1,5 +1,5 @@
 const konfigurasi = {
-    server: "http://192.168.10.243:5000/",
+    server: "http://192.168.1.9:5000/",
     secret: "genius"
 }
 

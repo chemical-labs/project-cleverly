@@ -73,7 +73,6 @@ export default class Login extends Component{
         return(
 
             <ScrollView contentContainerStyle={{ flexGrow: 1, flexDirection: 'column', backgroundColor: 'white', paddingBottom: 20 }}>
-                <StatusBar hidden={true}/>
                 <Modal isVisible={this.state.wrong}>
                     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'  }}>
                         <View style={{ padding: 15, backgroundColor: 'white', borderRadius: 10, alignItems: 'center'  }}>
@@ -86,14 +85,13 @@ export default class Login extends Component{
                         </View>
                     </View>
                 </Modal>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#6ECB63', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
-                    <View style={{ marginTop: 10 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#982ce6', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                    <View style={{ marginTop: 10, marginLeft: 10 }}>
                         <Image source={require('../assets/illustrations/study.png')} style={{ width: 150, height: 120 }} />
                     </View>
 
                     <View style={{ marginRight: 25, marginTop: 25, flexDirection: 'column' }}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Experimental</Text>
-                        <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Tryout</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Cleverly</Text>
                         <Text style={{ color: 'white' }}>Online Study</Text>
                         <Text style={{ color: 'white' }}>And Tryout Application</Text>
                     </View>
@@ -163,14 +161,14 @@ export default class Login extends Component{
                             }
                         ]}
                         initial={0}
-                        buttonColor={"#6ECB63"}
+                        buttonColor={"#982ce6"}
                         style={{ marginLeft: 15, marginTop: 15 }}
                         labelStyle={{ marginRight: 15 }}
                         formHorizontal={true}
                         onPress={(val) => this.setState({ pendidikan: val })}
                     />
 
-                    <TouchableOpacity style={{ backgroundColor: '#6ECB63', padding: 5, borderRadius: 15, width: 200, alignItems: 'center', marginTop: 20 }} onPress={() => this.register()}>
+                    <TouchableOpacity style={{ backgroundColor: '#982ce6', padding: 5, borderRadius: 15, width: 200, alignItems: 'center', marginTop: 20 }} onPress={() => this.register()}>
                         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Daftar</Text>
                     </TouchableOpacity>
                 </View>
