@@ -38,7 +38,7 @@ export default class Search extends Component{
             <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#ededed' }}>
                 <StatusBar hidden={true} />
                 <View style={{ flexDirection: 'column' }}>
-                    <View style={{ alignItems: 'center', backgroundColor: '#6ECB63', borderBottomRightRadius: 15, borderBottomLeftRadius: 15, paddingBottom: 25, }}>
+                    <View style={{ alignItems: 'center', backgroundColor: '#982CE6', borderBottomRightRadius: 15, borderBottomLeftRadius: 15, paddingBottom: 25, }}>
                         <View style={{ backgroundColor: 'white', elevation: 15, padding: 10, borderRadius: 15, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, width: 300 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <View>

@@ -20,7 +20,8 @@ export default class Ulangan extends Component{
             detik: null,
             total_point: null,
             user_jawaban: [],
-            done: false
+            done: false,
+            error: false
         }
     }
 
@@ -41,10 +42,12 @@ export default class Ulangan extends Component{
             axios.post(konfigurasi.server + 'ulangan/get/soal', { 
                 token: x,
                 secret: konfigurasi.secret,
-                pelajaran: 'Matematika'//this.props.route.params.pelajaran
+                pelajaran: this.props.route.params.pelajaran
             }).then(response => {
                 this.setState({ data: this.state.data.concat(response.data) })
-
+                if(this.state.data.length == 0){
+                    this.setState({ error: true })
+                }
             }).catch((e) => {
                 alert('error')
 
@@ -76,7 +79,6 @@ export default class Ulangan extends Component{
     render(){
         return(
             <ScrollView style={{ flexGrow: 1, flexDirection: 'column'}}>
-                <StatusBar hidden={true} />
                 <Modal isVisible={this.state.done}>
                     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                         <View style={{ padding: 15, alignItems: 'center', backgroundColor: 'white', borderRadius: 10 }}>
@@ -96,7 +98,21 @@ export default class Ulangan extends Component{
                     </View>
                 </Modal>
 
-                <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between', backgroundColor: '#6ECB63', borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}>
+                <Modal isVisible={this.state.error}>
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={{ padding: 10, borderRadius: 10, backgroundColor: 'white', alignItems: 'center' }}>
+                            <Text style={{ color: 'red', fontWeight: 'bold', fontSize: 17 }}>Soal Belum Siap!</Text>
+                            <Image source={require('../assets/illustrations/ongoing.png')} style={{ width: 160, height: 150, marginTop: 10 }} />
+                            <Text style={{ marginTop: 10, fontWeight: 'bold' }}>Upps, sepertinya ulangan</Text>
+                            <Text style={{ fontWeight: 'bold' }}>Belum di upload :(</Text>
+                            <TouchableOpacity style={{ marginTop: 10, backgroundColor: '#982CE6', padding: 5, borderRadius: 5, elevation: 10 }} onPress={() => this.props.navigation.goBack()}>
+                                <Text style={{ color: 'white' }}>Balik Lagi ?</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+
+                <View style={{ flexDirection: 'row', padding: 15, justifyContent: 'space-between', backgroundColor: '#982CE6', borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}>
                     <View style={{ flexDirection: 'row', marginTop: 5 }}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Tryout')}>
                             <Icons name='close-outline' size={27} color="white" />

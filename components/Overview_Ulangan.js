@@ -52,14 +52,14 @@ export default class Overview_Ulangan extends Component{
                             <Image source={require('../assets/illustrations/search.png')} style={{ width: 150, height: 140, marginTop: 15 }} />
                             <Text style={{ color: '#4a4a4a', textAlign: 'center', fontWeight: 'bold', marginTop: 5 }}>Upps, sepertinya ulangan </Text>
                             <Text style={{ color: '#4a4a4a', textAlign: 'center', fontWeight: 'bold', marginTop: 5 }}>belum di upload oleh admin</Text>
-                            <TouchableOpacity style={{ backgroundColor: '#6ECB63', padding: 5, borderRadius: 10, marginTop: 10 }} onPress={() => this.props.navigation.navigate('Home')}>
-                                <Text style={{ fontWeight: 'bold' }}>Balik Lagi ?</Text>
+                            <TouchableOpacity style={{ backgroundColor: '#982CE6', padding: 5, borderRadius: 10, marginTop: 10 }} onPress={() => this.props.navigation.navigate('Home')}>
+                                <Text style={{ fontWeight: 'bold', color: 'white' }}>Balik Lagi ?</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </Modal>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#6ECB63', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
-                    <View style={{ marginTop: 20 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#982CE6', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                    <View style={{ marginTop: 20, marginLeft: 10 }}>
                         <Image source={{ uri: this.state.icons }} style={{ width: 150, height: 120 }} />
                     </View>
 
@@ -74,11 +74,11 @@ export default class Overview_Ulangan extends Component{
                 <View style={{ flexDirection: 'column', alignItems: 'center', marginTop: 25, marginLeft: 15, justifyContent: 'space-between' }}>
 
                     <View style={{ alignItems: 'flex-start' }}>
-                        <Text style={{ fontSize: 19, padding: 5, paddingLeft: 9, paddingRight: 9, elevation: 5, borderRadius: 10, fontWeight: 'bold', backgroundColor: '#6ECB63' }}>{this.state.pelajaran}</Text>
+                        <Text style={{ fontSize: 19, padding: 5, paddingLeft: 9, paddingRight: 9, elevation: 5, borderRadius: 10, fontWeight: 'bold', backgroundColor: '#982CE6' }}>{this.state.pelajaran}</Text>
                     </View>
 
                     <View style={{ alignItems: 'flex-start', marginTop: 15 }}>
-                        <Text style={{ fontSize: 17, padding: 5, paddingLeft: 9, paddingRight: 9, elevation: 5, borderRadius: 10, fontWeight: 'bold', backgroundColor: '#6ECB63' }}><Icons name="time-outline" size={20} color="black" /> {this.state.waktu}</Text>
+                        <Text style={{ fontSize: 17, padding: 5, paddingLeft: 9, paddingRight: 9, elevation: 5, borderRadius: 10, fontWeight: 'bold', backgroundColor: '#982CE6' }}><Icons name="time-outline" size={20} color="black" /> {this.state.waktu}</Text>
                     </View>
 
                     <View style={{ marginTop: 35, alignItems: 'flex-start' }}>
@@ -87,7 +87,7 @@ export default class Overview_Ulangan extends Component{
                     </View>
 
                     <View style={{ alignItems: 'center', marginTop: 25 }}>
-                        <TouchableOpacity style={{ borderRadius: 10, backgroundColor: '#6ECB63', padding: 7 }} onPress={() => this.ulangan()}>
+                        <TouchableOpacity style={{ borderRadius: 10, backgroundColor: '#982CE6', padding: 7 }} onPress={() => this.ulangan()}>
                             <Text style={{ fontSize: 16, fontWeight: 'bold' }}><Icons name="clipboard-outline" size={20} color="black" /> Mulai Tryout</Text>
                         </TouchableOpacity>
                     </View>

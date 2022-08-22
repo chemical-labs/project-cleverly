@@ -42,16 +42,16 @@ export default class Profile extends Component{
                 <StatusBar hidden={true}/>
                 
                 <View style={{ flexDirection: 'column' }}>
-                    <View style={{ alignItems: 'center', backgroundColor: '#6ECB63', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
+                    <View style={{ alignItems: 'center', backgroundColor: '#982ce6', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
 
  
                         <View style={{ backgroundColor: 'white', elevation: 15, padding: 10, borderRadius: 15, flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', marginBottom: -40, marginTop: 30, width: 300, paddingTop: 15, paddingBottom: 15 }}>
                             <View style={{ flexDirection: 'column', alignItems: 'center' }}>
                                 <Image source={require('../assets/icons/students.png')} style={{ width: 70, height: 70, borderRadius: 100, padding: 5 }} />
                                 <View style={{ alignItems: 'center' }}>
-                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#6ECB63' }}>{this.state.nickname}</Text>
-                                    <TouchableOpacity style={{ marginTop: 8, borderRadius: 5, borderWidth: 2, borderColor: '#6ECB63', padding: 3, paddingLeft: 5, paddingRight: 5, borderRadius: 15 }}>
-                                        <Text style={{ color: '#6ECB63' }}>Edit Profile</Text>
+                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#982ce6' }}>{this.state.nickname}</Text>
+                                    <TouchableOpacity style={{ marginTop: 8, borderRadius: 5, borderWidth: 2, borderColor: '#982ce6', padding: 3, paddingLeft: 5, paddingRight: 5, borderRadius: 15 }}>
+                                        <Text style={{ color: '#982ce6' }}>Edit Profile</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity style={{ marginTop: 8, borderRadius: 5, borderWidth: 2, borderColor: 'red', padding: 3, paddingLeft: 5, paddingRight: 5, borderRadius: 15 }} onPress={() => this.logout()}>
                                         <Text style={{ color: 'red' }}>Logout</Text>

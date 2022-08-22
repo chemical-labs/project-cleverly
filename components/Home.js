@@ -30,7 +30,7 @@ export default class Navigasi extends Component{
 
     componentDidMount(){
         AsyncStorage.getItem('token').then(res => {
-            if(res.length == null){
+            if(res == null){
                 this.props.navigation.dispatch(
                     StackActions.replace('Banner')
                 )
@@ -51,7 +51,7 @@ export default class Navigasi extends Component{
                         icons = 'school-outline'
                     }
 
-                    return <Icons name={icons} size={30} color="#6ECB63" />
+                    return <Icons name={icons} size={30} color="#982ce2" />
                 }
             })}>
                 <Tab.Screen name="Tryout" component={Home} />
@@ -117,9 +117,9 @@ class Belajar extends Component{
     render(){
         return(
             <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#ededed' }}>
-                <StatusBar hidden={true} />
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 <View style={{ flexDirection: 'column' }}>
-                    <View style={{ alignItems: 'center', backgroundColor: '#6ECB63', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
+                    <View style={{ alignItems: 'center', backgroundColor: '#982ce6', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
                         <View style={{ backgroundColor: 'white', elevation: 15, padding: 10, borderRadius: 15, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, width: 300 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <View>
@@ -243,9 +243,9 @@ class Home extends Component{
     render(){
         return(
             <ScrollView contentContainerStyle={{ flexGrow: 1, flexDirection: 'column', backgroundColor: '#ededed' }}>
-                <StatusBar hidden={true} />
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 <View style={{ flexDirection: 'column' }}>
-                    <View style={{ alignItems: 'center', backgroundColor: '#6ECB63', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
+                    <View style={{ alignItems: 'center', backgroundColor: '#982ce6', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
                         <View style={{ backgroundColor: 'white', elevation: 15, padding: 10, borderRadius: 15, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, width: 300 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <View>

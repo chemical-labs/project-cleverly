@@ -121,7 +121,11 @@ route.post('/update/soal', (req,res) => {
                             },
                         }
                     }, (err, done) => {
-                        res.json({ success: "[+] Success updating soal" })
+                        if(err){
+                            console.log(err)
+                        }else{
+                            res.json({ success: "[+] Success updating soal" })
+                        }
                     })
                 }
             })

@@ -23,7 +23,7 @@ export default class App extends Component{
         super(props)
 
         this.state = {
-            route: "Banner"
+            route: 'Home'
         }
     }
     
@@ -31,6 +31,8 @@ export default class App extends Component{
         AsyncStorage.getItem('token').then(token => {
             if(token){
                 this.setState({ route: 'Home' })
+            }else{
+                this.setState({ route: 'Login' })
             }
         })
     }
@@ -45,25 +47,25 @@ export default class App extends Component{
                     <Stack.Screen name='Banner' component={Banner} options={{ headerShown: false }} />
                     <Stack.Screen name='Banner_Register' component={Banner_Register} options={{ headerShown: false }} />
                     <Stack.Screen name='Profile' component={Profile} options={{ headerStyle: {
-                        backgroundColor: '#6ECB63',
+                        backgroundColor: '#962ce6',
                         elevation: 0,
                     },
                         headerTintColor: 'white'
                     }} />
                     <Stack.Screen name='Overview_Pelajaran' component={Overview_Pelajaran} options={{ title: '', headerStyle: {
-                        backgroundColor: '#6ECB63',
+                        backgroundColor: '#982ce6',
                         elevation: 0,
                     },
                         headerTintColor: 'white'
                     }} />
                     <Stack.Screen name='Overview_Ulangan' component={Overview_Ulangan} options={{ title: '', headerStyle: {
-                        backgroundColor: '#6ECB63',
+                        backgroundColor: '#982ce6',
                         elevation: 0,
                     },
                         headerTintColor: 'white'
                     }} />
                     <Stack.Screen name='Ulangan_Selesai' component={Ulangan_Selesai} options={{ title: '', headerStyle: {
-                        backgroundColor: '#6ECB63',
+                        backgroundColor: '#982ce6',
                         elevation: 0,
                         borderBottomLeftRadius: 10,
                         borderBottomRightRadius: 10
@@ -73,7 +75,7 @@ export default class App extends Component{
                     <Stack.Screen name='Home' component={Home} options={{ headerShown: false }}/>
                     <Stack.Screen name='Admin' component={Admin} options={{ headerShown: false }}/>
                     <Stack.Screen name='Search' component={Search} options={{ title: '', headerStyle: {
-                        backgroundColor: '#6ECB63',
+                        backgroundColor: '#982CE6',
                         elevation: 0,
                     },
                         headerTintColor: 'white'
