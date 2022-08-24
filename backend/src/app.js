@@ -5,7 +5,6 @@ const helmet = require('helmet');
 const cors = require('cors');
 const db = require('mongoose')
 const file = require('express-fileupload')
-const ch = require('colors')
 
 // include .env file
 require('dotenv').config();
@@ -24,10 +23,8 @@ const app = express();
 // Connecting to database
 db.connect(process.env.DB, {
     useUnifiedTopology: true
-}).then(() => {
-    console.log(ch.green("[+] Successfully connecting to database"))
 }).catch(e => {
-    console.log(ch.red('[!] Error connecting to database'))
+    console.log(ch.bgRed('[!] Error connecting to database'))
 })
 
 app.use(morgan('dev'));
@@ -46,7 +43,7 @@ app.use('/jurusan', routeJurusan)
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Wellcome To Cleverly Server 🦄'
+    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄'
   });
 });
 
