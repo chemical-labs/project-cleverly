@@ -1,0 +1,12 @@
+{
+    "name": "Cleverly Development",
+    "description": "Educational Platform",
+    "env": {
+        "DB": {
+            "value": "Your mongodb url"
+        },
+        "KEY": {
+            "value": "genius"
+        }
+    }
+}
