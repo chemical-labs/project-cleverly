@@ -71,8 +71,8 @@ export default class Login extends Component{
 
     render(){
         return(
-
             <ScrollView contentContainerStyle={{ flexGrow: 1, flexDirection: 'column', backgroundColor: 'white', paddingBottom: 20 }}>
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 <Modal isVisible={this.state.wrong}>
                     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center'  }}>
                         <View style={{ padding: 15, backgroundColor: 'white', borderRadius: 10, alignItems: 'center'  }}>

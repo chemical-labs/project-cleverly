@@ -18,6 +18,7 @@ export default class Banner extends Component{
     render(){
         return(
             <View style={{ flex: 1, flexDirection: 'column', backgroundColor: 'white' }}>
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#982ce6', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
                     <View style={{ marginTop: 10, marginLeft: 10 }}>
                         <Image source={require('../assets/illustrations/study.png')} style={{ width: 150, height: 120 }} />

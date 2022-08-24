@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, ScrollView, RefreshControl, FlatList, Text, StatusBar, TextInput, TouchableOpacity, Image, AsyncStorage, Picker } from 'react-native'
+import { View, ScrollView, RefreshControl, FlatList, Text, StatusBar, TextInput, TouchableOpacity, Image, AsyncStorage } from 'react-native'
+import Picker from '@react-native-picker/picker'
 import axios from 'axios'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icons from 'react-native-vector-icons/Ionicons'
@@ -19,7 +20,7 @@ import { StackActions } from '@react-navigation/native'
     VideoRenderMode,
 } from 'react-native-agora'*/
 
-export default class Navigasi extends Component{
+export default class Home extends Component{
     constructor(props){
         super(props)
 
@@ -41,7 +42,7 @@ export default class Navigasi extends Component{
     render(){
         let Tab = createBottomTabNavigator();
         return(
-            <Tab.Navigator initialRouteName="Home" screenOptions={({route}) => ({
+            <Tab.Navigator initialRouteName="Tryout" screenOptions={({route}) => ({
                 tabBarIcon: ({ focus, color, size }) => {
                     let icons;
 
@@ -54,8 +55,8 @@ export default class Navigasi extends Component{
                     return <Icons name={icons} size={30} color="#982ce2" />
                 }
             })}>
-                <Tab.Screen name="Tryout" component={Home} />
-                <Tab.Screen name="Belajar" component={Belajar} />
+                <Tab.Screen name="Tryout" component={Tryout} options={{ headerShown: false }} />
+                <Tab.Screen name="Belajar" component={Belajar} options={{ headerShown: false }} />
             </Tab.Navigator>
         )
     }
@@ -156,11 +157,6 @@ class Belajar extends Component{
                             <View>
                                 <View style={{ marginTop: 15, flexDirection: 'column' }}>
                                     <View style={{ borderWidth: 2, borderRadius: 10, borderColor: 'black' }}>
-                                        <Picker style={{ borderWidth: 2, borderColor: 'black' }} selectedValue={this.state.jurusan} onValueChange={(val) => this.jurusan(val)} >
-                                            {this.state.data_jurusan.map((x, y) => {
-                                            return <Picker.Item label={"Jurusan " + x.jurusan} value={x.jurusan}/>
-                                            })}
-                                        </Picker>
                                     </View>
                                     <View>
                                         <FlatList data={this.state.pelajaran}
@@ -177,9 +173,10 @@ class Belajar extends Component{
 
         )
     }
+
 }
 
-class Home extends Component{
+class Tryout extends Component{
     constructor(props){
         super(props)
 
@@ -194,7 +191,6 @@ class Home extends Component{
     }
 
     async componentDidMount(){
-
         AsyncStorage.getItem('token').then(async token => {
             await axios.post(konfigurasi.server + 'auth/user', { token: token, secret: konfigurasi.secret }).then(res => {
                 this.setState({ username: res.data.username })
@@ -239,7 +235,6 @@ class Home extends Component{
         </View>
     )};
 
-
     render(){
         return(
             <ScrollView contentContainerStyle={{ flexGrow: 1, flexDirection: 'column', backgroundColor: '#ededed' }}>
@@ -275,24 +270,19 @@ class Home extends Component{
                             </View>
                         </TouchableOpacity>
                     </View>
-                    
+
                     <View style={{ alignItems: 'center' }}>
                         <View style={{ padding: 12, backgroundColor: 'white', elevation: 15, marginTop: 40, width: 320, borderRadius: 10, paddingBottom: 14, paddingTop: 14 }}>
                             <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Cek Tryout</Text>
                             <View>
                                 <View style={{ marginTop: 15, flexDirection: 'column' }}>
                                     <View style={{ borderWidth: 2, borderRadius: 10, borderColor: 'black' }}>
-                                        <Picker style={{ borderWidth: 2, borderColor: 'black' }} selectedValue={this.state.jurusan} onValueChange={(val) => this.jurusan(val)} >
-                                            {this.state.data_jurusan.map((x, y) => {
-                                            return <Picker.Item label={"Jurusan " + x.jurusan} value={x.jurusan}/>
-                                            })}
-                                        </Picker>
-                                    </View>
-                                    <View>
-                                        <FlatList data={this.state.pelajaran}
-                                            numColumns={3}
-                                            renderItem={this.renderItem}
-                                        />
+                                        <View>
+                                            <FlatList data={this.state.pelajaran}
+                                                numColumns={3}
+                                                renderItem={this.renderItem}
+                                            />
+                                        </View>
                                     </View>
                                 </View>
                             </View>

@@ -42,7 +42,7 @@ export default class Search extends Component{
                         <View style={{ backgroundColor: 'white', elevation: 15, padding: 10, borderRadius: 15, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, width: 300 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <View>
-                                    <TextInput placeholder="Cari Pelajaran" style={{ marginTop: 3, marginLeft: 3, width: 240, fontWeight: 'italic' }} onChangeText={(val) => this.setState({ search: val })} value={this.state.search} />
+                                    <TextInput placeholder="Cari Pelajaran" style={{ marginTop: 3, marginLeft: 3, width: 240, fontWeight: 'bold' }} onChangeText={(val) => this.setState({ search: val })} value={this.state.search} />
                                 </View>
 
                                 <View>

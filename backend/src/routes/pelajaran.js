@@ -71,18 +71,9 @@ route.post('/add', (req,res) => {
                 res.json({ error: '[!] Users not found' }) 
             }else{
                 try{
-                    req.files.img.mv('public/pelajaran/' + req.files.img.name, (err, gambar) => {
-                        if(err){
-                            res.json({ error: '[!] Error uploading image' })
-                        }else{
-                            modelPelajaran.insertMany({ jurusan: req.body.jurusan, nama: req.body.nama, gambar: 'http://' + req.headers.host + '/pelajaran/' + req.files.img.name }, (err, done) => {
-                                res.json({ success: '[+] Success insert data' })
-                            })
-                        }
-
-
+                    modelPelajaran.insertMany({ jurusan: req.body.jurusan, nama: req.body.nama, gambar: req.body.gambar }, (err, done) => {
+                        res.json({ success: '[+] Success insert data' })
                     })
-
                 }catch(e){
 
                 }

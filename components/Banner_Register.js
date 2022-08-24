@@ -16,7 +16,7 @@ export default class Banner_Register extends Component{
     render(){
         return(
             <View style={{ flex: 1, flexDirection: 'column', backgroundColor: 'white' }}>
-                <StatusBar hidden={true}/>
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#8e17e3', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
                     <View style={{ marginTop: 10, marginLeft: 10 }}>
                         <Image source={require('../assets/illustrations/study.png')} style={{ width: 150, height: 120 }} />

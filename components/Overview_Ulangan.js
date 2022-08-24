@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { View, ScrollView, RefreshControl, Text, TextInput, StatusBar, TouchableOpacity, AsyncStorage, Image } from 'react-native'
+import WebView from 'react-native-webview'
 import axios from 'axios'
 import Icons from 'react-native-vector-icons/Ionicons'
 import konfigurasi from '../config'
 import Modal from 'react-native-modal'
+import YoutubePlayer from 'react-native-youtube-iframe'
 
 export default class Overview_Ulangan extends Component{
     constructor(props){
@@ -44,8 +46,8 @@ export default class Overview_Ulangan extends Component{
     render(){
         return(
             <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 15, flexDirection: 'column', backgroundColor: 'white' }}>
-                <StatusBar hidden={true}/>
-                <Modal isVisible={this.state.error}>
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
+                    <Modal isVisible={this.state.error}>
                     <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <View style={{ padding: 13, backgroundColor: 'white', borderRadius: 10, alignItems: 'center' }}>
                             <Text style={{ color: 'orange', fontWeight: 'bold', fontSize: 17 }}>Ulangan Belum Tersedia..</Text>
@@ -60,7 +62,7 @@ export default class Overview_Ulangan extends Component{
                 </Modal>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#982CE6', borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
                     <View style={{ marginTop: 20, marginLeft: 10 }}>
-                        <Image source={{ uri: this.state.icons }} style={{ width: 150, height: 120 }} />
+                        <Image source={require('../assets/illustrations/default_ulangan.png')} style={{ width: 140, height: 120 }} />
                     </View>
 
                     <View style={{ marginRight: 45, marginTop: 25, flexDirection: 'column' }}>
@@ -72,8 +74,15 @@ export default class Overview_Ulangan extends Component{
                 </View>
 
                 <View style={{ flexDirection: 'column', alignItems: 'center', marginTop: 25, marginLeft: 15, justifyContent: 'space-between' }}>
-
-                    <View style={{ alignItems: 'flex-start' }}>
+                    
+      <WebView
+          style={{ width: 300, height: 200 }}
+        javaScriptEnabled={true}
+        source={{
+          uri: 'https://www.youtube.com/embed/zYierUhIFNQ?rel=0&autoplay=0&showinfo=0&controls=0',
+        }}
+      />
+                    <View style={{ alignItems: 'flex-start', marginTop: 20 }}>
                         <Text style={{ fontSize: 19, padding: 5, paddingLeft: 9, paddingRight: 9, elevation: 5, borderRadius: 10, fontWeight: 'bold', backgroundColor: '#982CE6' }}>{this.state.pelajaran}</Text>
                     </View>
 

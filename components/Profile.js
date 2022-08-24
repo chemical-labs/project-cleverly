@@ -39,7 +39,7 @@ export default class Profile extends Component{
     render(){
         return(
             <ScrollView contentContainerStyle={{ flexGrow: 1, flexDirection: 'column', backgroundColor: '#ededed' }}>
-                <StatusBar hidden={true}/>
+                <StatusBar animated={true} backgroundColor="#982CE6" barStyle="light-content" />
                 
                 <View style={{ flexDirection: 'column' }}>
                     <View style={{ alignItems: 'center', backgroundColor: '#982ce6', borderBottomRightRadius: 15, borderBottomLeftRadius: 15 }}>
@@ -57,7 +57,7 @@ export default class Profile extends Component{
                                         <Text style={{ color: 'red' }}>Logout</Text>
                                     </TouchableOpacity>
                                     <Text style={{ marginTop: 5, fontWeight: 'bold', color: '#b8b8b8', textTransform: "uppercase" }}>{this.state.pendidikan}</Text>
-                                    <Text style={{ fontWeight: 'italic', color: '#b8b8b8' }}>{this.state.email}</Text>
+                                    <Text style={{ fontWeight: 'bold', color: '#b8b8b8' }}>{this.state.email}</Text>
                                 </View>
                             </View>
 
